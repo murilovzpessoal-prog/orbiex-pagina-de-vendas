@@ -1,9 +1,8 @@
 {
   "name": "orbiex",
   "version": "1.0.0",
-  "description": "Orbiex - O primeiro ecossistema completo de IA para TikTok Shop",
-  "main": "server.js",
+  "private": true,
   "scripts": {
-    "start": "node server.js"
+    "dev": "node dev-server.js"
   }
 }
