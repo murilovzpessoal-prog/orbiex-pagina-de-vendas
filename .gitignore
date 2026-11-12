@@ -1,0 +1,12 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# OS and logs
+.DS_Store
+*.log
+
+# Archives & node_modules
+*.zip
+node_modules/
