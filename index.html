@@ -31,9 +31,24 @@
 
   function getActiveAffiliate() {
     try {
-      var pathname = (window.location.pathname || "").toLowerCase();
+      var pathname = (window.location.pathname || "").toLowerCase().replace(/\/+$/, "");
       var searchParams = new URLSearchParams(window.location.search || "");
       var ref = (searchParams.get("ref") || searchParams.get("affiliate") || searchParams.get("afiliado") || searchParams.get("slug") || "").toLowerCase().trim();
+
+      // On root or homepage, ALWAYS default to official links and purge any previous storage
+      if (pathname === "" || pathname === "/" || pathname === "/index.html" || pathname === "/index") {
+        try {
+          sessionStorage.removeItem("orbiex_aff_slug");
+          localStorage.removeItem("orbiex_aff_slug");
+        } catch(e) {}
+        if (ref) {
+          if (AFFILIATES[ref]) return AFFILIATES[ref];
+          if (ref === "qdeiezjd" || ref === "vitor") return AFFILIATES.acesso;
+          if (ref === "jsebjtj7" || ref === "theuzs" || ref === "theus") return AFFILIATES.entrar;
+          if (ref === "lvy4ppan" || ref === "gabriel") return AFFILIATES.ativar;
+        }
+        return null; // Official links
+      }
 
       var segments = pathname.split("/").filter(Boolean);
       for (var i = 0; i < segments.length; i++) {
@@ -50,24 +65,13 @@
         if (ref === "jsebjtj7" || ref === "theuzs" || ref === "theus") return AFFILIATES.entrar;
         if (ref === "lvy4ppan" || ref === "gabriel") return AFFILIATES.ativar;
       }
-
-      var stored = (sessionStorage.getItem("orbiex_aff_slug") || "").toLowerCase().trim();
-      if (stored && AFFILIATES[stored] && segments.length > 0) {
-        return AFFILIATES[stored];
-      }
     } catch(e) {}
     return null;
   }
 
   function getLinks() {
     var aff = getActiveAffiliate();
-    if (aff) {
-      try {
-        sessionStorage.setItem("orbiex_aff_slug", aff.slug);
-      } catch(e) {}
-      return aff;
-    }
-    return DEFAULT_LINKS;
+    return aff || DEFAULT_LINKS;
   }
 
   window.__orbiexGetLinks = getLinks;
