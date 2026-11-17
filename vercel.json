@@ -8,27 +8,15 @@
       "destination": "/api/[...all]"
     },
     {
-      "source": "/acesso/?",
+      "source": "/orbiex/acesso",
       "destination": "/acesso/index.html"
     },
     {
-      "source": "/entrar/?",
+      "source": "/orbiex/entrar",
       "destination": "/entrar/index.html"
     },
     {
-      "source": "/ativar/?",
-      "destination": "/ativar/index.html"
-    },
-    {
-      "source": "/orbiex/acesso/?",
-      "destination": "/acesso/index.html"
-    },
-    {
-      "source": "/orbiex/entrar/?",
-      "destination": "/entrar/index.html"
-    },
-    {
-      "source": "/orbiex/ativar/?",
+      "source": "/orbiex/ativar",
       "destination": "/ativar/index.html"
     }
   ]
