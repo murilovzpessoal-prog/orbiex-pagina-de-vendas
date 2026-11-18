@@ -18,6 +18,10 @@
     {
       "source": "/orbiex/ativar",
       "destination": "/ativar/index.html"
+    },
+    {
+      "source": "/orbiex/inicio",
+      "destination": "/inicio/index.html"
     }
   ]
 }

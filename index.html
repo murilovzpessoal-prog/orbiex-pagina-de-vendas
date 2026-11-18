@@ -21,6 +21,13 @@
       id: "LvY4PpAn",
       m: "https://pay.cakto.com.br/ji4adqv?affiliate=LvY4PpAn",
       a: "https://pay.cakto.com.br/327oqte_1315302?affiliate=LvY4PpAn"
+    },
+    inicio: {
+      slug: "inicio",
+      name: "Dudu",
+      id: "W7vfiZAT",
+      m: "https://pay.cakto.com.br/ji4adqv?affiliate=W7vfiZAT",
+      a: "https://pay.cakto.com.br/327oqte_1315302?affiliate=W7vfiZAT"
     }
   };
 
@@ -46,6 +53,7 @@
           if (ref === "qdeiezjd" || ref === "vitor") return AFFILIATES.acesso;
           if (ref === "jsebjtj7" || ref === "theuzs" || ref === "theus") return AFFILIATES.entrar;
           if (ref === "lvy4ppan" || ref === "gabriel") return AFFILIATES.ativar;
+          if (ref === "w7vfizat" || ref === "dudu" || ref === "inicio") return AFFILIATES.inicio;
         }
         return null; // Official links
       }
@@ -57,6 +65,7 @@
         if (seg === "vitor") return AFFILIATES.acesso;
         if (seg === "theuzs" || seg === "theus") return AFFILIATES.entrar;
         if (seg === "gabriel") return AFFILIATES.ativar;
+        if (seg === "dudu") return AFFILIATES.inicio;
       }
 
       if (ref) {
@@ -64,6 +73,7 @@
         if (ref === "qdeiezjd" || ref === "vitor") return AFFILIATES.acesso;
         if (ref === "jsebjtj7" || ref === "theuzs" || ref === "theus") return AFFILIATES.entrar;
         if (ref === "lvy4ppan" || ref === "gabriel") return AFFILIATES.ativar;
+        if (ref === "w7vfizat" || ref === "dudu" || ref === "inicio") return AFFILIATES.inicio;
       }
     } catch(e) {}
     return null;
